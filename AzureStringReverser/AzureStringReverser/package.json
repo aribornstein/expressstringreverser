@@ -1,0 +1,10 @@
+{
+  "name": "AzureStringReverser",
+  "version": "0.0.0",
+  "description": "AzureStringReverser",
+  "main": "server.js",
+  "author": {
+    "name": "abornst",
+    "email": ""
+  }
+}
