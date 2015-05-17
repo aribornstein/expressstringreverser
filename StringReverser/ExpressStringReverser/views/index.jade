@@ -1,0 +1,55 @@
+﻿extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    div(ng-controller="MainController")
+      input(type='text', ng-model='text', placeholder='Enter text' width='Auto')
+      p Input: {{ text }}
+      p Reversed input: {{ text | reverse }}
+      p Translated input: {{translate}}
+
+
+    script(type="text/javascript").
+      var app = angular.module('MyApp', []);
+      app.filter("reverse", function() 
+      {
+          return function(input) 
+          {
+              var result = "";
+              input = input || "";
+              for (var i=0; i<input.length; i++) 
+              {
+                result = input.charAt(i) + result;
+              }
+              return result;
+          };
+      });
+      //translate 
+
+      
+
+      app.service('dataService', function($http) {
+         this.getData = function(myInput) 
+         {
+             console.log(myInput);
+             // $http() returns a $promise that we can add handlers with .then()
+             return $http({
+                 method: 'GET',
+                 url: 'http://pythicstringreverser.azurewebsites.net/api/translate',
+                 params: {input:myInput},
+                 headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+              });
+          }
+      });
+
+      app.controller('MainController', function($scope, dataService) {
+         $scope.translate = null;
+         $scope.text ="Enter a sentence to reverse and translate!";
+         dataService.getData($scope.text).then(function(dataResponse) 
+         {
+             //console.log();
+             $scope.translate = dataResponse.data;
+         });
+      });
+

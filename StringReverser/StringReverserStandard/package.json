@@ -1,7 +1,7 @@
 {
-  "name": "AzureStringReverser",
+  "name": "StringReverserStandard",
   "version": "0.0.0",
-  "description": "AzureStringReverser",
+  "description": "StringReverserStandard",
   "main": "server.js",
   "author": {
     "name": "abornst",

@@ -3,14 +3,18 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>AzureStringReverser</Name>
-    <RootNamespace>AzureStringReverser</RootNamespace>
+    <Name>StringReverserStandard</Name>
+    <RootNamespace>StringReverserStandard</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>41edcb5c-2a35-4e0c-872f-57b2064165ab</ProjectGuid>
+    <ProjectGuid>cbf5036f-4d14-4aaf-b55e-e3e1d39b026c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>server.js</StartupFile>
     <SearchPath>
@@ -31,17 +35,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="server.js" />
-    <Content Include="Web.config" />
-    <Content Include="Web.Debug.config" />
-    <Content Include="bin\ChangeConfig.ps1" />
-    <Content Include="bin\download.ps1" />
-    <Content Include="bin\setup_web.cmd" />
-    <Content Include="bin\node.cmd" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>
