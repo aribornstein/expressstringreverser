@@ -45,7 +45,7 @@ app.get('/api/translate', function (req, res) {
     var input = url_parts.query;
 
     //do translate call here
-    var client_secret = "XwKRHkdYdxsRY212VvZQhrzmUmbfs0DAqmJEt/6RN08=";
+    var client_secret = "put key here";
     var client_id = "PythicStringReverser";
     
     console.log(client_id);
